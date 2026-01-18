@@ -1,0 +1,11 @@
+#input two numbers
+num1 = float(input("Enter the first number: "))
+num2 = float(input("Enter the second number: "))
+
+# Perform multiplication and division
+multiply = num1 * num2
+divide = num1 / num2
+
+# Output the results
+print("Multiplication:", multiply)
+print("Division:", divide)
