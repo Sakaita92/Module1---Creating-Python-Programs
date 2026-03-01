@@ -1,0 +1,60 @@
+##Key-Value Pairs: Room Number
+ROOMS = {
+    "CSC101": "3004",
+    "CSC102": "4501",
+    "CSC103": "6755",
+    "NET110": "1244",
+    "COM241": "1411",
+}
+##coKey-Value Pairs: Instructors
+INSTRUCTORS = {
+    "CSC101": "Haynes",
+    "CSC102": "Alvarado",
+    "CSC103": "Rich",
+    "NET110": "Burke",
+    "COM241": "Lee",
+}
+##Key-Value Pairs: Meeting Time
+MEETING_TIMES = {
+    "CSC101": "8:00 a.m.",
+    "CSC102": "9:00 a.m.",
+    "CSC103": "10:00 a.m.",
+    "NET110": "11:00 a.m.",
+    "COM241": "1:00 p.m.",
+}
+
+VALID_COURSES = ", ".join(ROOMS.keys())
+
+
+def display_course_info(course_number: str) -> None:
+    """Print the room, instructor, and meeting time for a valid course."""
+    print(f"Course: {course_number}")
+    print(f"  Room: {ROOMS[course_number]}")
+    print(f"  Instructor: {INSTRUCTORS[course_number]}")
+    print(f"  Meeting time: {MEETING_TIMES[course_number]}")
+
+
+def main() -> None:
+    print("Course Lookup")
+    print(f"Valid courses: {VALID_COURSES}")
+    print("Enter Q to quit.\n")
+
+    while True:
+        user_input = input("Enter a course number: ").strip()
+        if user_input.upper() == "Q":
+            print("Goodbye.")
+            break
+
+        course = user_input.upper()
+
+        if course in ROOMS:
+            display_course_info(course)
+        else:
+            print("Course not found.")
+            print(f"Valid courses: {VALID_COURSES}")
+
+        print()  # blank line for readability
+
+
+if __name__ == "__main__":
+    main()
